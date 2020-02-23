@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [TestNG Suite]" parallel="methods">
+  <test thread-count="5" verbose="0" name="headlessTest(failed)" parallel="methods">
+    <parameter name="browser" value="chromeHeadless"/>
+    <classes>
+      <class name="com.wmata.suite.chromeHeadless.planMyTrip_Fail_A_Test">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="letsMetro"/>
+        </methods>
+      </class> <!-- com.wmata.suite.chromeHeadless.planMyTrip_Fail_A_Test -->
+    </classes>
+  </test> <!-- headlessTest(failed) -->
+  <test thread-count="5" verbose="0" name="firefoxTest(failed)" parallel="methods">
+    <parameter name="browser" value="ff"/>
+    <classes>
+      <class name="com.wmata.suite.firefox.tripDirTest_Fail_B_Test">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="executeTripSearch"/>
+        </methods>
+      </class> <!-- com.wmata.suite.firefox.tripDirTest_Fail_B_Test -->
+      <class name="com.wmata.suite.firefox.goToServiceTest">
+        <methods>
+          <include name="goToService"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.wmata.suite.firefox.goToServiceTest -->
+    </classes>
+  </test> <!-- firefoxTest(failed) -->
+  <test thread-count="5" verbose="0" name="ieTest(failed)" parallel="methods">
+    <parameter name="browser" value="ie"/>
+    <classes>
+      <class name="com.wmata.suite.ie.goToServiceTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="goToService"/>
+        </methods>
+      </class> <!-- com.wmata.suite.ie.goToServiceTest -->
+    </classes>
+  </test> <!-- ieTest(failed) -->
+</suite> <!-- Failed suite [TestNG Suite] -->

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Suite">
+    <test name="headlessTest">
+        <parameter name="browser" value="chromeHeadless"/>
+        <classes>
+            <class name="com.wmata.suite.chromeHeadless.tripDirTest"/>
+            <class name="com.wmata.suite.chromeHeadless.planMyTrip_Fail_A_Test"/>
+        </classes>
+    </test>
+    <test name="chromeTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.wmata.suite.chrome.goToServiceTest"/>
+            <class name="com.wmata.suite.chrome.tripDirTest"/>
+        </classes>
+    </test>
+    <test name="firefoxTest">
+        <parameter name="browser" value="ff"/>
+        <classes>
+            <class name="com.wmata.suite.firefox.goToServiceTest"/>
+            <class name="com.wmata.suite.firefox.tripDirTest"/>
+            <class name="com.wmata.suite.firefox.tripDirTest_Fail_B_Test"/>
+        </classes>
+    </test>
+    <test name="ieTest">
+        <parameter name="browser" value="ie"/>
+
+        <classes>
+            <class name="com.wmata.suite.ie.goToServiceTest"/>
+            <class name="com.wmata.suite.ie.tripDirTest"/>
+        </classes>
+    </test>
+</suite>

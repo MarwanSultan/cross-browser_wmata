@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="cbTestwmata [clean:clean,prepare-package...]" type="MavenRunConfiguration" factoryName="Maven" singleton="false" nameIsGenerated="true">
+  <configuration default="false" name="cbTestwmata [surefire:test]" type="MavenRunConfiguration" factoryName="Maven" singleton="false" nameIsGenerated="true">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -10,8 +10,6 @@
           </option>
           <option name="goals">
             <list>
-              <option value="clean:clean" />
-              <option value="prepare-package" />
               <option value="surefire:test" />
             </list>
           </option>

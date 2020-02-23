@@ -1,4 +1,4 @@
-package com.wmata.suite.chromeHeadless;
+package com.wmata.suite.chrome;
 
 import com.pages.HomePage;
 import core.BaseTest;
