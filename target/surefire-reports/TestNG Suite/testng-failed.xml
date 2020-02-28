@@ -4,44 +4,77 @@
   <test thread-count="5" verbose="0" name="headlessTest(failed)" parallel="methods">
     <parameter name="browser" value="chromeHeadless"/>
     <classes>
-      <class name="com.wmata.suite.chromeHeadless.planMyTrip_Fail_A_Test">
+      <class name="com.wmata.suite.chromeHeadless.DirectionsTest">
         <methods>
+          <include name="executeTripSearch"/>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="letsMetro"/>
         </methods>
-      </class> <!-- com.wmata.suite.chromeHeadless.planMyTrip_Fail_A_Test -->
+      </class> <!-- com.wmata.suite.chromeHeadless.DirectionsTest -->
+      <class name="com.wmata.suite.chromeHeadless.DirectionTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="executeTripSearch"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.wmata.suite.chromeHeadless.DirectionTest -->
     </classes>
   </test> <!-- headlessTest(failed) -->
-  <test thread-count="5" verbose="0" name="firefoxTest(failed)" parallel="methods">
-    <parameter name="browser" value="ff"/>
+  <test thread-count="5" verbose="0" name="chromeTest(failed)" parallel="methods">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.wmata.suite.firefox.tripDirTest_Fail_B_Test">
+      <class name="com.wmata.suite.chrome.DirectionTest">
         <methods>
           <include name="teardown"/>
           <include name="setup"/>
           <include name="executeTripSearch"/>
         </methods>
-      </class> <!-- com.wmata.suite.firefox.tripDirTest_Fail_B_Test -->
-      <class name="com.wmata.suite.firefox.goToServiceTest">
+      </class> <!-- com.wmata.suite.chrome.DirectionTest -->
+      <class name="com.wmata.suite.chrome.DirectionsTest">
         <methods>
-          <include name="goToService"/>
+          <include name="teardown"/>
+          <include name="executeTripSearch"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.wmata.suite.chrome.DirectionsTest -->
+    </classes>
+  </test> <!-- chromeTest(failed) -->
+  <test thread-count="5" verbose="0" name="firefoxTest(failed)" parallel="methods">
+    <parameter name="browser" value="ff"/>
+    <classes>
+      <class name="com.wmata.suite.firefox.DirectionsTest">
+        <methods>
+          <include name="executeTripSearch"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.wmata.suite.firefox.goToServiceTest -->
+      </class> <!-- com.wmata.suite.firefox.DirectionsTest -->
+      <class name="com.wmata.suite.firefox.DirectionTest">
+        <methods>
+          <include name="executeTripSearch"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.wmata.suite.firefox.DirectionTest -->
     </classes>
   </test> <!-- firefoxTest(failed) -->
   <test thread-count="5" verbose="0" name="ieTest(failed)" parallel="methods">
     <parameter name="browser" value="ie"/>
     <classes>
-      <class name="com.wmata.suite.ie.goToServiceTest">
+      <class name="com.wmata.suite.ie.DirectionsTest">
         <methods>
           <include name="teardown"/>
+          <include name="executeTripSearch"/>
           <include name="setup"/>
-          <include name="goToService"/>
         </methods>
-      </class> <!-- com.wmata.suite.ie.goToServiceTest -->
+      </class> <!-- com.wmata.suite.ie.DirectionsTest -->
+      <class name="com.wmata.suite.ie.DirectionTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="executeTripSearch"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.wmata.suite.ie.DirectionTest -->
     </classes>
   </test> <!-- ieTest(failed) -->
 </suite> <!-- Failed suite [TestNG Suite] -->

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.example</groupId>
     <artifactId>cbTestwmata</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <webdrivermanager.version>3.7.1</webdrivermanager.version>
@@ -16,16 +13,13 @@
         <logback-classic.version>1.2.3</logback-classic.version>
         <allure-testng.version>2.13.0</allure-testng.version>
         <owner.version>1.0.9</owner.version>
-
         <aspectj.version>1.9.1</aspectj.version>
         <assertj-core.version>3.13.2</assertj-core.version>
         <ngwebdriver.version>1.1.4</ngwebdriver.version>
-
         <seleniumGrid>false</seleniumGrid>
         <seleniumGridUrl>http://ip:port/wd/hub</seleniumGridUrl>
         <seleniumBrowser>chrome</seleniumBrowser>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -33,16 +27,15 @@
             <version>${webdrivermanager.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.maven.reporting</groupId>
+            <artifactId>maven-reporting-api</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium-java.version}</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.paulhammant</groupId>-->
-        <!--            <artifactId>ngwebdriver</artifactId>-->
-        <!--            <version>${ngwebdriver.version}</version>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -52,7 +45,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -64,64 +56,39 @@
             <artifactId>assertj-core</artifactId>
             <version>${assertj-core.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.maven.surefire</groupId>
             <artifactId>surefire-booter</artifactId>
             <version>3.0.0-M4</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.aeonbits.owner</groupId>-->
-        <!--            <artifactId>owner</artifactId>-->
-        <!--            <version>${owner.version}</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.testng</groupId>-->
-        <!--            <artifactId>testng</artifactId>-->
-        <!--            <version>7.0.0</version>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
-
     </dependencies>
-
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
-
                     <suiteXmlFiles>
-                        <!--suppress UnresolvedMavenProperty -->
                         <suiteXmlFile>testng.xml</suiteXmlFile>
-                        <!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <parallel>methods</parallel>
-                    <threadCountMethods>4</threadCountMethods>
-                    <forkCount>5000</forkCount>
+                    <threadCountMethods>8</threadCountMethods>
+                    <forkCount>100</forkCount>
                     <reuseForks>true</reuseForks>
-                    <!--                                        <systemPropertyVariables>-->
-                    <!--                                            <seleniumGrid>${seleniumGrid}</seleniumGrid>-->
-                    <!--                                            <seleniumGridUrl>${seleniumGridUrl}</seleniumGridUrl>-->
-                    <!--                                            <seleniumBrowser>${seleniumBrowser}</seleniumBrowser>-->
-                    <!--                                        </systemPropertyVariables>-->
+                    <runOrder>random</runOrder>
                     <includes>
                         <include>testng.xml</include>
                     </includes>
+                    <goal>clean</goal>
+                    <goal>package</goal>
+                    <goal>surefire</goal>
+                    <goal>test</goal>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+            </plugin><!-- https://mvnrepository.com/artifact/org.apache.maven.reporting/maven-reporting-api -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -130,8 +97,18 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-jar-plugin</artifactId>-->
+            <!--                <version>3.0.2</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <goals>-->
+            <!--                            <goal>test-jar</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
         </plugins>
     </build>
-
 </project>

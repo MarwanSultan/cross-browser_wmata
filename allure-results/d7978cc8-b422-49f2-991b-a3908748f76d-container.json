@@ -1,0 +1,15 @@
+{
+  "uuid": "d7978cc8-b422-49f2-991b-a3908748f76d",
+  "name": "TestNG Suite",
+  "children": [
+    "c5836443-9baf-4a50-8e86-a51c018c00bd",
+    "56e0568c-f1d0-49bd-b57a-0c898b4c1cf2",
+    "cf8ab358-cafc-40f7-ae91-239ba35b322e",
+    "5cb1606a-f21a-4224-aa53-251a64308c90"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1582758985339,
+  "stop": 1582758985657
+}

@@ -1,5 +1,7 @@
+C:\MAVEN\cbTestwmata\src\main\java\com\pages\HomePage.java
 C:\MAVEN\cbTestwmata\src\main\java\core\BaseTest.java
-C:\MAVEN\cbTestwmata\src\main\java\org\example\properties\Environment.java
+C:\MAVEN\cbTestwmata\src\main\java\com\properties\EnvironmentProperties.java
+C:\MAVEN\cbTestwmata\src\main\java\com\utility\Widget.java
 C:\MAVEN\cbTestwmata\src\main\java\core\BasePage.java
-C:\MAVEN\cbTestwmata\src\main\java\org\example\pages\HomePage.java
-C:\MAVEN\cbTestwmata\src\main\java\org\example\properties\EnvironmentProperties.java
+C:\MAVEN\cbTestwmata\src\main\java\com\utility\Aggregator.java
+C:\MAVEN\cbTestwmata\src\main\java\com\properties\Environment.java

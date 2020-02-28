@@ -2,32 +2,26 @@
 <suite name="TestNG Suite">
     <test name="headlessTest">
         <parameter name="browser" value="chromeHeadless"/>
-        <classes>
-            <class name="com.wmata.suite.chromeHeadless.tripDirTest"/>
-            <class name="com.wmata.suite.chromeHeadless.planMyTrip_Fail_A_Test"/>
-        </classes>
+        <packages>
+            <package name="com.wmata.suite.chromeHeadless"/>
+        </packages>
     </test>
     <test name="chromeTest">
         <parameter name="browser" value="chrome"/>
-        <classes>
-            <class name="com.wmata.suite.chrome.goToServiceTest"/>
-            <class name="com.wmata.suite.chrome.tripDirTest"/>
-        </classes>
+        <packages>
+            <package name="com.wmata.suite.chrome"/>
+        </packages>
     </test>
     <test name="firefoxTest">
         <parameter name="browser" value="ff"/>
-        <classes>
-            <class name="com.wmata.suite.firefox.goToServiceTest"/>
-            <class name="com.wmata.suite.firefox.tripDirTest"/>
-            <class name="com.wmata.suite.firefox.tripDirTest_Fail_B_Test"/>
-        </classes>
+        <packages>
+            <package name="com.wmata.suite.firefox"/>
+        </packages>
     </test>
     <test name="ieTest">
         <parameter name="browser" value="ie"/>
-
-        <classes>
-            <class name="com.wmata.suite.ie.goToServiceTest"/>
-            <class name="com.wmata.suite.ie.tripDirTest"/>
-        </classes>
+        <packages>
+            <package name="com.wmata.suite.ie"/>
+        </packages>
     </test>
 </suite>

@@ -38,8 +38,10 @@ public class HomePage extends BasePage {
   }
 
   @Step("Open the WMATA homepage")
-  public void openURL() {
-    driver.get("https://www.wmata.com");
+  public void openURL() throws InterruptedException {
+	  driver.get("https://www.wmata.com");
+	  Thread.sleep(1000);
+	  driver.navigate().refresh();
   }
 
   public void isLoaded() throws Error {
@@ -55,15 +57,14 @@ public class HomePage extends BasePage {
     getMetroLogo();
   }
 
-  public void clickPLANMYTRIP() throws InterruptedException {
-    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+	public void clickPLANMYTRIP() {
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
-    getPlanMyTrip_Button.click();
-    driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-    //    getPlanMyTrip_Button.sendKeys(Keys.TAB);
-    //    getPlanMyTrip_Button.sendKeys(Keys.TAB);
-    //    getPlanMyTrip_Button.sendKeys(Keys.ENTER);
-  }
+		getPlanMyTrip_Button.click();
+		//    getPlanMyTrip_Button.sendKeys(Keys.TAB);
+		//    getPlanMyTrip_Button.sendKeys(Keys.TAB);
+		//    getPlanMyTrip_Button.sendKeys(Keys.ENTER);
+	}
 
   public void getFromAdd(String from) {
     fromAddressField.clear();
